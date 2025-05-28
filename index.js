@@ -21,6 +21,10 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => console.log("❌ Cliente saiu:", socket.id));
 });
 
+app.get("/", (req, res) => {
+  res.send("Servidor ativo");
+});
+
 // Rota REST → cria agendamento e emite evento
 app.post("/appointments", (req, res) => {
   const appt = req.body;
